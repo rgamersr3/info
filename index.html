@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R-GAMER'S</title>
+  <title>R-GAMER'S - Inicio</title>
   <style>
     body {
       margin: 0;
@@ -13,42 +13,23 @@
       scroll-behavior: smooth;
     }
 
-    /* Banner superior con imagen base64 */
-    .banner {
-      position: relative;
-      width: 100%;
-      height: 70vh;
-      background: url("image.jpg/...") no-repeat center center/cover;
-      filter: blur(3px) brightness(0.5);
-    }
-    .banner-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    /* Título principal */
+    .top-header {
       text-align: center;
-      padding: 20px;
+      padding: 50px 20px;
+      background: #111;
+      border-bottom: 2px solid #0f0;
     }
-    .banner-overlay h1 {
+    .top-header h1 {
       font-size: 3rem;
       color: #0f0;
       text-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
       margin: 0;
     }
-    .banner-overlay p {
+    .top-header p {
       font-size: 1.5rem;
       color: #fff;
       margin: 10px 0;
-    }
-    .logo-banner img {
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid #0f0;
-      box-shadow: 0 0 25px #0f0;
-      margin-top: 20px;
     }
 
     nav {
@@ -74,6 +55,42 @@
     section {
       padding: 50px 20px;
       text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #0f0;
+      text-shadow: 0 0 10px #0f0;
+    }
+
+    /* Dos columnas para noticias y estrenos */
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: #111;
+      border: 2px solid #0f0;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 15px #0f0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #0f0;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0f0;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #ccc;
     }
 
     /* Animaciones permanentes */
@@ -111,59 +128,103 @@
       position: relative;
       z-index: 2;
     }
-    footer a {
-      color: #0f0;
-      margin: 0 10px;
-      text-decoration: none;
-    }
 
+    /* Responsive */
+    @media (max-width: 650px) {
+      .two-columns {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 90%;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Banner -->
-  <div class="banner"></div>
-  <div class="banner-overlay">
+  <!-- Título principal -->
+  <div class="top-header">
     <h1>R-GAMER'S</h1>
     <p>Tu mundo gamer en un solo lugar 🎮</p>
-    <div class="logo-banner">
-      <img src="image.jpg..." alt="Logo R-GAMER'S">
-    </div>
   </div>
 
   <!-- Menú -->
   <nav>
     <a href="#novedades">Novedades</a>
     <a href="#estrenos">Estrenos</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="contacto.html">Contacto</a>
     <a href="catalogo.html">Catálogo</a>
   </nav>
 
-  <!-- Secciones -->
+  <!-- Novedades -->
   <section id="novedades" class="fade-in">
     <h2>🔥 Novedades</h2>
-    <p>Últimos títulos añadidos a la sala gamer.</p>
+    <div class="two-columns">
+      <div class="card">
+        <h3>Noticia Gamer 1</h3>
+        <p>Resumen de la noticia sobre lanzamientos y eventos del mundo gamer.</p>
+      </div>
+      <div class="card">
+        <h3>Noticia Gamer 2</h3>
+        <p>Resumen de la noticia sobre consolas y torneos recientes.</p>
+      </div>
+      <div class="card">
+        <h3>Noticia Gamer 3</h3>
+        <p>Breve descripción de nuevas tecnologías y periféricos.</p>
+      </div>
+      <div class="card">
+        <h3>Noticia Gamer 4</h3>
+        <p>Actualización sobre videojuegos populares y comunidad gamer.</p>
+      </div>
+    </div>
   </section>
 
+  <!-- Estrenos -->
   <section id="estrenos" class="fade-in">
     <h2>🚀 Estrenos</h2>
-    <p>Prepárate para los lanzamientos más esperados.</p>
+    <div class="two-columns">
+      <div class="card">
+        <h3>Juego 1</h3>
+        <p>Breve sinopsis del juego recién llegado a la sala R-GAMER'S.</p>
+      </div>
+      <div class="card">
+        <h3>Juego 2</h3>
+        <p>Descripción corta del estreno y género del juego.</p>
+      </div>
+      <div class="card">
+        <h3>Juego 3</h3>
+        <p>Detalles de la experiencia, historia y jugabilidad.</p>
+      </div>
+      <div class="card">
+        <h3>Juego 4</h3>
+        <p>Resumen rápido del estreno con puntuación recomendada.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="servicios" class="fade-in">
-    <h2>🛠️ Servicios</h2>
-    <p>✔ Reparación de consolas y mandos</p>
-    <p>✔ Sala de juegos con los últimos títulos</p>
-    <p>✔ Preventa de lanzamientos</p>
-    <p>✔ Accesorios y más</p>
-  </section>
-
-  <section id="contacto" class="fade-in">
-    <h2>📱 Contacto</h2>
-    <p>WhatsApp: <a href="https://wa.me/5355555555" target="_blank">+53 55555555</a></p>
-    <p>Facebook: <a href="#">R-GAMER’S</a></p>
-    <p>Instagram: <a href="#">@rgamers</a></p>
+  <!-- Recomendaciones y Top Ten -->
+  <section id="recomendaciones" class="fade-in">
+    <h2>🎮 Recomendaciones y Top Ten</h2>
+    <div class="two-columns">
+      <div class="card">
+        <h3>Juego Recomendado 1</h3>
+        <p>Sinopsis breve y motivos por los que es un must-play.</p>
+      </div>
+      <div class="card">
+        <h3>Juego Recomendado 2</h3>
+        <p>Descripción corta y plataforma disponible.</p>
+      </div>
+      <div class="card">
+        <h3>Top 1 - PS4</h3>
+        <p>El mejor juego del ranking de consolas.</p>
+      </div>
+      <div class="card">
+        <h3>Top 2 - Xbox</h3>
+        <p>El juego más jugado de la semana.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -190,4 +251,4 @@
   </script>
 
 </body>
-</html>
+          </html>
