@@ -3,41 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R-GAMER'S - Inicio</title>
-
-  <!-- Estilos -->
+  <title>R-GAMER'S</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #0d0d0d;
       color: #f2f2f2;
-      scroll-behavior: smooth; /* 👈 Scroll suave */
+      scroll-behavior: smooth;
     }
-    header {
-      background: linear-gradient(90deg, #111, #1a1a1a);
-      padding: 20px;
+
+    /* Banner superior con imagen base64 */
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/...") no-repeat center center/cover;
+      filter: blur(3px) brightness(0.5);
+    }
+    .banner-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       text-align: center;
-      border-bottom: 2px solid #0f0;
+      padding: 20px;
     }
-    header h1 {
+    .banner-overlay h1 {
+      font-size: 3rem;
       color: #0f0;
+      text-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
       margin: 0;
-      font-size: 2.5rem;
-      text-shadow: 0 0 10px #0f0;
     }
-    header p {
-      font-size: 1.2rem;
-      color: #ccc;
+    .banner-overlay p {
+      font-size: 1.5rem;
+      color: #fff;
+      margin: 10px 0;
     }
+    .logo-banner img {
+      width: 150px;
+      border-radius: 50%;
+      border: 3px solid #0f0;
+      box-shadow: 0 0 25px #0f0;
+      margin-top: 20px;
+    }
+
     nav {
       text-align: center;
-      padding: 10px;
+      padding: 15px;
       background: #111;
       border-bottom: 2px solid #0f0;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
     }
     nav a {
       margin: 0 15px;
@@ -49,73 +70,124 @@
     nav a:hover {
       color: #0f0;
     }
+
     section {
-      padding: 60px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
+
+    /* Animaciones permanentes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer con resplandor */
     footer {
+      position: relative;
       background: #111;
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px 20px 20px;
       border-top: 2px solid #0f0;
       color: #888;
+      overflow: hidden;
+    }
+    footer .footer-glow {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 150px;
+      background: radial-gradient(ellipse at bottom, rgba(0,255,0,0.4), transparent 70%);
+      z-index: 1;
+    }
+    footer p {
+      position: relative;
+      z-index: 2;
     }
     footer a {
       color: #0f0;
       margin: 0 10px;
       text-decoration: none;
     }
-  </style>
 
-  <!-- Librería AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </style>
 </head>
 <body>
 
-  <header data-aos="fade-down">
-    <h1 data-aos="zoom-in">R-GAMER'S</h1>
-    <p data-aos="fade-up">Tu mundo gamer en un solo lugar</p>
-  </header>
+  <!-- Banner -->
+  <div class="banner"></div>
+  <div class="banner-overlay">
+    <h1>R-GAMER'S</h1>
+    <p>Tu mundo gamer en un solo lugar 🎮</p>
+    <div class="logo-banner">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAA..." alt="Logo R-GAMER'S">
+    </div>
+  </div>
 
+  <!-- Menú -->
   <nav>
-    <a href="index.html">Inicio</a>
-    <a href="catalogo.html">Catálogo</a> <!--catalogo.html-->
+    <a href="#novedades">Novedades</a>
+    <a href="#estrenos">Estrenos</a>
     <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
+    <a href="catalogo.html">Catálogo</a>
   </nav>
 
-  <section id="novedades">
-    <h2 data-aos="fade-right">🔥 Novedades y Estrenos</h2>
-    <p data-aos="fade-up">🚀 FC 26 ya disponible en R-GAMER’S para PS4 y PS5.</p>
-    <p data-aos="fade-up" data-aos-delay="200">⚡ Próximamente: Call of Duty edición especial.</p>
+  <!-- Secciones -->
+  <section id="novedades" class="fade-in">
+    <h2>🔥 Novedades</h2>
+    <p>Últimos títulos añadidos a la sala gamer.</p>
   </section>
 
-  <section id="servicios">
-    <h2 data-aos="fade-left">🛠️ Servicios</h2>
-    <p data-aos="fade-up">✔ Reparación de consolas y mandos</p>
-    <p data-aos="fade-up" data-aos-delay="200">✔ Sala de juegos con títulos actualizados</p>
-    <p data-aos="fade-up" data-aos-delay="400">✔ Preventa de estrenos</p>
-    <p data-aos="fade-up" data-aos-delay="600">✔ Accesorios y más</p>
+  <section id="estrenos" class="fade-in">
+    <h2>🚀 Estrenos</h2>
+    <p>Prepárate para los lanzamientos más esperados.</p>
   </section>
 
-  <section id="contacto">
-    <h2 data-aos="flip-up">📱 Contacto</h2>
-    <p data-aos="fade-right">WhatsApp: <a href="https://wa.me/5355555555" target="_blank">+53 55555555</a></p>
-    <p data-aos="fade-left">Facebook: <a href="#">R-GAMER’S</a></p>
-    <p data-aos="fade-up">Instagram: <a href="#">@rgamers</a></p>
+  <section id="servicios" class="fade-in">
+    <h2>🛠️ Servicios</h2>
+    <p>✔ Reparación de consolas y mandos</p>
+    <p>✔ Sala de juegos con los últimos títulos</p>
+    <p>✔ Preventa de lanzamientos</p>
+    <p>✔ Accesorios y más</p>
   </section>
 
-  <footer data-aos="fade-in">
+  <section id="contacto" class="fade-in">
+    <h2>📱 Contacto</h2>
+    <p>WhatsApp: <a href="https://wa.me/5355555555" target="_blank">+53 55555555</a></p>
+    <p>Facebook: <a href="#">R-GAMER’S</a></p>
+    <p>Instagram: <a href="#">@rgamers</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-glow"></div>
     <p>© 2025 R-GAMER'S | Todos los derechos reservados</p>
   </footer>
 
-  <!-- Script de AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Script animaciones -->
   <script>
-    AOS.init({
-      duration: 1200,
-      once: false  // 👈 animaciones permanentes
-    });
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          el.classList.add('visible');
+        } else {
+          el.classList.remove('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
   </script>
+
 </body>
-      </html>
+</html>
