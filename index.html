@@ -13,7 +13,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Título principal */
     .top-header {
       text-align: center;
       padding: 50px 20px;
@@ -58,42 +57,48 @@
     }
 
     h2 {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       font-size: 2rem;
       color: #0f0;
       text-shadow: 0 0 10px #0f0;
     }
 
-    /* Dos columnas para noticias y estrenos */
     .two-columns {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
+
     .card {
       background: #111;
       border: 2px solid #0f0;
       border-radius: 10px;
-      padding: 20px;
+      padding: 15px;
       width: 300px;
       box-shadow: 0 0 15px #0f0;
       transition: transform 0.3s, box-shadow 0.3s;
+      text-align: left;
     }
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 25px #0f0;
     }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
     .card h3 {
-      margin-top: 0;
+      margin: 10px 0 5px;
       color: #0f0;
     }
     .card p {
       font-size: 0.9rem;
       color: #ccc;
+      margin: 0;
     }
 
-    /* Animaciones permanentes */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -104,7 +109,6 @@
       transform: translateY(0);
     }
 
-    /* Footer con resplandor */
     footer {
       position: relative;
       background: #111;
@@ -129,7 +133,6 @@
       z-index: 2;
     }
 
-    /* Responsive */
     @media (max-width: 650px) {
       .two-columns {
         flex-direction: column;
@@ -153,6 +156,8 @@
   <nav>
     <a href="#novedades">Novedades</a>
     <a href="#estrenos">Estrenos</a>
+    <a href="#recomendaciones">Recomendaciones</a>
+    <a href="#topten">Top Ten</a>
     <a href="servicios.html">Servicios</a>
     <a href="contacto.html">Contacto</a>
     <a href="catalogo.html">Catálogo</a>
@@ -163,20 +168,14 @@
     <h2>🔥 Novedades</h2>
     <div class="two-columns">
       <div class="card">
+        <img src="img/noticia1.jpg" alt="Noticia 1">
         <h3>Noticia Gamer 1</h3>
-        <p>Resumen de la noticia sobre lanzamientos y eventos del mundo gamer.</p>
+        <p>Resumen sobre lanzamientos y eventos recientes del mundo gamer.</p>
       </div>
       <div class="card">
+        <img src="img/noticia2.jpg" alt="Noticia 2">
         <h3>Noticia Gamer 2</h3>
-        <p>Resumen de la noticia sobre consolas y torneos recientes.</p>
-      </div>
-      <div class="card">
-        <h3>Noticia Gamer 3</h3>
-        <p>Breve descripción de nuevas tecnologías y periféricos.</p>
-      </div>
-      <div class="card">
-        <h3>Noticia Gamer 4</h3>
-        <p>Actualización sobre videojuegos populares y comunidad gamer.</p>
+        <p>Actualización sobre torneos, consolas y comunidad gamer.</p>
       </div>
     </div>
   </section>
@@ -186,43 +185,58 @@
     <h2>🚀 Estrenos</h2>
     <div class="two-columns">
       <div class="card">
+        <img src="img/estreno1.jpg" alt="Estreno 1">
         <h3>Juego 1</h3>
-        <p>Breve sinopsis del juego recién llegado a la sala R-GAMER'S.</p>
+        <p>Breve sinopsis y género del juego recién llegado a R-GAMER'S.</p>
       </div>
       <div class="card">
+        <img src="img/estreno2.jpg" alt="Estreno 2">
         <h3>Juego 2</h3>
-        <p>Descripción corta del estreno y género del juego.</p>
-      </div>
-      <div class="card">
-        <h3>Juego 3</h3>
-        <p>Detalles de la experiencia, historia y jugabilidad.</p>
-      </div>
-      <div class="card">
-        <h3>Juego 4</h3>
-        <p>Resumen rápido del estreno con puntuación recomendada.</p>
+        <p>Descripción corta y plataforma disponible.</p>
       </div>
     </div>
   </section>
 
-  <!-- Recomendaciones y Top Ten -->
+  <!-- Recomendaciones -->
   <section id="recomendaciones" class="fade-in">
-    <h2>🎮 Recomendaciones y Top Ten</h2>
+    <h2>🎯 Recomendaciones</h2>
     <div class="two-columns">
       <div class="card">
+        <img src="img/recom1.jpg" alt="Recomendación 1">
         <h3>Juego Recomendado 1</h3>
-        <p>Sinopsis breve y motivos por los que es un must-play.</p>
+        <p>Motivos por los que es un must-play y plataforma disponible.</p>
       </div>
       <div class="card">
+        <img src="img/recom2.jpg" alt="Recomendación 2">
         <h3>Juego Recomendado 2</h3>
-        <p>Descripción corta y plataforma disponible.</p>
+        <p>Sinopsis breve y experiencia de juego destacada.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Top Ten -->
+  <section id="topten" class="fade-in">
+    <h2>🏆 Top Ten</h2>
+    <div class="two-columns">
       <div class="card">
+        <img src="img/top1.jpg" alt="Top 1 PS4">
         <h3>Top 1 - PS4</h3>
-        <p>El mejor juego del ranking de consolas.</p>
+        <p>El juego más destacado del ranking de consolas PS4.</p>
       </div>
       <div class="card">
+        <img src="img/top2.jpg" alt="Top 2 Xbox">
         <h3>Top 2 - Xbox</h3>
-        <p>El juego más jugado de la semana.</p>
+        <p>Juego más jugado de la semana en Xbox.</p>
+      </div>
+      <div class="card">
+        <img src="img/top3.jpg" alt="Top 3 Switch">
+        <h3>Top 3 - Switch</h3>
+        <p>Juego popular por críticas y experiencia de juego.</p>
+      </div>
+      <div class="card">
+        <img src="img/top4.jpg" alt="Top 4 PC">
+        <h3>Top 4 - PC</h3>
+        <p>Recomendado por rendimiento y comunidad gamer.</p>
       </div>
     </div>
   </section>
@@ -251,4 +265,4 @@
   </script>
 
 </body>
-          </html>
+  </html>
