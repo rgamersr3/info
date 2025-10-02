@@ -1,20 +1,18 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R-GAMER'S</title>
+  <title>R-GAMER'S - Inicio</title>
 
-  <!-- Estilos principales -->
+  <!-- Estilos -->
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #0d0d0d;
       color: #f2f2f2;
+      scroll-behavior: smooth; /* 👈 Scroll suave */
     }
     header {
       background: linear-gradient(90deg, #111, #1a1a1a);
@@ -55,28 +53,6 @@
       padding: 60px 20px;
       text-align: center;
     }
-    .catalogo {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .juego {
-      background: #1a1a1a;
-      border: 2px solid #0f0;
-      border-radius: 10px;
-      width: 200px;
-      padding: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .juego img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .juego:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #0f0;
-    }
     footer {
       background: #111;
       text-align: center;
@@ -91,7 +67,7 @@
     }
   </style>
 
-  <!-- Librería AOS para animaciones -->
+  <!-- Librería AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -102,38 +78,24 @@
   </header>
 
   <nav>
-    <a href="#catalogo">Catálogo</a>
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a> <!-- redirección a otra página -->
     <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <section id="catalogo">
-    <h2 data-aos="fade-right">🎮 Catálogo de Juegos</h2>
-    <div class="catalogo">
-      <div class="juego" data-aos="zoom-in">
-        <img src="https://via.placeholder.com/200x250?text=FC+26" alt="Juego 1">
-        <h3>FC 26</h3>
-        <p>Disponible para PS4</p>
-      </div>
-      <div class="juego" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://via.placeholder.com/200x250?text=GTA+V" alt="Juego 2">
-        <h3>GTA V</h3>
-        <p>PS4 | Xbox | PC</p>
-      </div>
-      <div class="juego" data-aos="zoom-in" data-aos-delay="400">
-        <img src="https://via.placeholder.com/200x250?text=Mortal+Kombat" alt="Juego 3">
-        <h3>Mortal Kombat</h3>
-        <p>PS5 | Xbox</p>
-      </div>
-    </div>
+  <section id="novedades">
+    <h2 data-aos="fade-right">🔥 Novedades y Estrenos</h2>
+    <p data-aos="fade-up">🚀 FC 26 ya disponible en R-GAMER’S para PS4 y PS5.</p>
+    <p data-aos="fade-up" data-aos-delay="200">⚡ Próximamente: Call of Duty edición especial.</p>
   </section>
 
   <section id="servicios">
     <h2 data-aos="fade-left">🛠️ Servicios</h2>
     <p data-aos="fade-up">✔ Reparación de consolas y mandos</p>
-    <p data-aos="fade-up" data-aos-delay="200">✔ Sala de juegos con los últimos títulos</p>
-    <p data-aos="fade-up" data-aos-delay="400">✔ Preventa de lanzamientos</p>
-    <p data-aos="fade-up" data-aos-delay="600">✔ Accesorios y mucho más</p>
+    <p data-aos="fade-up" data-aos-delay="200">✔ Sala de juegos con títulos actualizados</p>
+    <p data-aos="fade-up" data-aos-delay="400">✔ Preventa de estrenos</p>
+    <p data-aos="fade-up" data-aos-delay="600">✔ Accesorios y más</p>
   </section>
 
   <section id="contacto">
@@ -151,11 +113,9 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 1200,  // duración animaciones
-      once: true       // animar solo una vez
+      duration: 1200,
+      once: false  // 👈 animaciones permanentes
     });
   </script>
 </body>
-</html>
-
-
+      </html>
