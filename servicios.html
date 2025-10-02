@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R-GAMER'S - Servicios</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      scroll-behavior: smooth;
+    }
+
+    .top-header {
+      text-align: center;
+      padding: 50px 20px;
+      background: #111;
+      border-bottom: 2px solid #0f0;
+    }
+    .top-header h1 {
+      font-size: 3rem;
+      color: #0f0;
+      text-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
+      margin: 0;
+    }
+
+    nav {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      border-bottom: 2px solid #0f0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #f2f2f2;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #0f0;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: #111;
+      border: 2px solid #0f0;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 15px #0f0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px #0f0;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0f0;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Animaciones permanentes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer con resplandor */
+    footer {
+      position: relative;
+      background: #111;
+      text-align: center;
+      padding: 40px 20px 20px 20px;
+      border-top: 2px solid #0f0;
+      color: #888;
+      overflow: hidden;
+    }
+    footer .footer-glow {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120%;
+      height: 150px;
+      background: radial-gradient(ellipse at bottom, rgba(0,255,0,0.4), transparent 70%);
+      z-index: 1;
+    }
+    footer p {
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 650px) {
+      .two-columns {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Título -->
+  <div class="top-header">
+    <h1>R-GAMER'S</h1>
+  </div>
+
+  <!-- Menú -->
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="catalogo.html">Catálogo</a>
+  </nav>
+
+  <!-- Servicios -->
+  <section class="fade-in">
+    <h2>🛠️ Nuestros Servicios</h2>
+    <div class="two-columns">
+      <div class="card">
+        <h3>Reparación de Consolas</h3>
+        <p>Arreglamos tu consola sin importar la marca ni el modelo.</p>
+      </div>
+      <div class="card">
+        <h3>Reparación de Mandos</h3>
+        <p>Mandos dañados o botones fallando, los dejamos como nuevos.</p>
+      </div>
+      <div class="card">
+        <h3>Sala de Juegos</h3>
+        <p>Disfruta de los últimos títulos en nuestras consolas de última generación.</p>
+      </div>
+      <div class="card">
+        <h3>Venta de Accesorios</h3>
+        <p>Contamos con periféricos y accesorios para todos los gamers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-glow"></div>
+    <p>© 2025 R-GAMER'S | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Script animaciones -->
+  <script>
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+          el.classList.add('visible');
+        } else {
+          el.classList.remove('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+</body>
+</html>
