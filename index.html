@@ -13,22 +13,58 @@
       scroll-behavior: smooth;
     }
 
+    /* 🔹 Banner superior con imagen de fondo y contraste */
     .top-header {
+      position: relative;
       text-align: center;
-      padding: 50px 20px;
-      background: #111;
+      padding: 80px 20px;
+      background: url('banner.jpg') center/cover no-repeat;
       border-bottom: 2px solid #0f0;
     }
+    .top-header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    .top-header h1, .top-header p {
+      position: relative;
+      z-index: 2;
+    }
     .top-header h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #0f0;
-      text-shadow: 0 0 15px #0f0, 0 0 30px #0f0;
       margin: 0;
+      text-shadow: 0 0 20px #0f0, 0 0 40px #0f0;
     }
     .top-header p {
       font-size: 1.5rem;
-      color: #fff;
       margin: 10px 0;
+    }
+
+    /* 🔹 Cintillo animado con logos de consolas */
+    .logo-slider {
+      position: relative;
+      overflow: hidden;
+      background: #111;
+      border-top: 2px solid #0f0;
+      border-bottom: 2px solid #0f0;
+      padding: 10px 0;
+    }
+    .logo-track {
+      display: flex;
+      gap: 60px;
+      animation: slide 15s linear infinite;
+      width: max-content;
+    }
+    .logo-track img {
+      height: 50px;
+      filter: drop-shadow(0 0 5px #0f0);
+    }
+    @keyframes slide {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
     nav {
@@ -51,10 +87,7 @@
       color: #0f0;
     }
 
-    section {
-      padding: 50px 20px;
-      text-align: center;
-    }
+    section { padding: 50px 20px; text-align: center; }
 
     h2 {
       margin-bottom: 30px;
@@ -89,16 +122,10 @@
       border-radius: 10px;
       margin-bottom: 10px;
     }
-    .card h3 {
-      margin: 10px 0 5px;
-      color: #0f0;
-    }
-    .card p {
-      font-size: 0.9rem;
-      color: #ccc;
-      margin: 0;
-    }
+    .card h3 { color: #0f0; }
+    .card p { color: #ccc; }
 
+    /* Animaciones de aparición */
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -113,7 +140,7 @@
       position: relative;
       background: #111;
       text-align: center;
-      padding: 40px 20px 20px 20px;
+      padding: 40px 20px 20px;
       border-top: 2px solid #0f0;
       color: #888;
       overflow: hidden;
@@ -128,41 +155,48 @@
       background: radial-gradient(ellipse at bottom, rgba(0,255,0,0.4), transparent 70%);
       z-index: 1;
     }
-    footer p {
-      position: relative;
-      z-index: 2;
-    }
+    footer p { position: relative; z-index: 2; }
 
     @media (max-width: 650px) {
-      .two-columns {
-        flex-direction: column;
-        align-items: center;
-      }
-      .card {
-        width: 90%;
-      }
+      .two-columns { flex-direction: column; align-items: center; }
+      .card { width: 90%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Título principal -->
+  <!-- Banner superior -->
   <div class="top-header">
     <h1>R-GAMER'S</h1>
     <p>Tu mundo gamer en un solo lugar 🎮</p>
+  </div>
+
+  <!-- Cintillo de logos -->
+  <div class="logo-slider">
+    <div class="logo-track">
+      <img src="logos/playstation.png" alt="PlayStation">
+      <img src="logos/xbox.png" alt="Xbox">
+      <img src="logos/nintendo.png" alt="Nintendo">
+      <img src="logos/pc.png" alt="PC">
+      <img src="logos/sega.png" alt="Sega">
+      <!-- Repetidos para ciclo continuo -->
+      <img src="logos/playstation.png" alt="PlayStation">
+      <img src="logos/xbox.png" alt="Xbox">
+      <img src="logos/nintendo.png" alt="Nintendo">
+    </div>
   </div>
 
   <!-- Menú -->
   <nav>
     <a href="#novedades">Novedades</a>
     <a href="#estrenos">Estrenos</a>
-    <a href="#recomendaciones">Recomendaciones</a> 
-    <a href="#topten">Top Ten</a> 
-    <a href="catalogo.html">Catálogo</a>                                         
+    <a href="#recomendaciones">Recomendaciones</a>
+    <a href="#topten">Top Ten</a>
+    <a href="catalogo.html">Catálogo</a>
     <a href="servicios.html">Servicios</a>
     <a href="contacto.html">Contacto</a>
-    
-  </nav>
+
+    </nav>
 
   <!-- Novedades -->
   <section id="novedades" class="fade-in">
